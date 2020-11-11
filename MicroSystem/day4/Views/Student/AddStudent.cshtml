@@ -1,0 +1,50 @@
+﻿@*@model Student
+@{
+    ViewData["Title"] = "AddStudent";
+    SelectList Deptlist = new SelectList(ViewBag.Depts, "Id", "Name");
+}
+
+<h1>AddStudent</h1>
+<form method="post" asp-antiforgery="true" asp-action="AddStudent" asp-controller="Student"
+      style="width:50% ;margin:10px">
+    <div asp-validation-summary="All"></div>
+    <div class="form-group">
+        <label asp-for="Name"></label>
+        <input asp-for="Name" class="form form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Email"></label>
+        <input asp-for="Email" class="form form-control" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Password"></label>
+        <input asp-for="Password" class="form form-control" />
+        <span asp-validation-for="Password" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Age"></label>
+        <input asp-for="Age" class="form form-control" />
+        <span asp-validation-for="Age" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="IsCool"></label>
+        <input asp-for="IsCool" />
+        <span asp-validation-for="IsCool" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Gender"></label>
+        <select asp-for="Gender" asp-items="new SelectList(Enum.GetValues(typeof(Gender)))"></select>
+        <span asp-validation-for="Gender" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Department"></label>
+        <select asp-for="DeptId" asp-items="Deptlist" class="form form-control"></select>
+        <span asp-validation-for="Department" class="text-danger"></span>
+    </div>
+    <input type="submit" />
+
+</form>
+<script src="~/lib/jquery-validate/jquery.validate.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>*@

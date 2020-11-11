@@ -1,0 +1,6 @@
+﻿<form action="/Account/Login" method="post">
+    @Html.AntiForgeryToken()
+    <input type="text" name="username" value="" />
+    <input type="text" name="password" value="" />
+    <button type="submit">Login</button>
+</form>
